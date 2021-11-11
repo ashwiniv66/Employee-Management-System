@@ -15,19 +15,19 @@ ul{
 a{
     text-decoration: none;
 }
-/*
+/* 
 #main{
-    width:100%;
+     width:100%;
     height:100vh;
     box-sizing: border-box;
     background-color:#fafbff;
-	position: relative;
+	position: relative; 
 	background-image:url("../src/assets/ems3.jpg"); 
     background-repeat: no-repeat;
     background-size: 1350px;
     background-position:center;
-} 
-*/
+}  */
+ 
 nav{
     display: flex;
     justify-content: space-between;
@@ -107,6 +107,9 @@ nav{
     transition:all ease 0.5s;
 }
 
+
+
+
 /* .logout_button{
     min-width:100px;
     padding:15px 30px;
@@ -127,7 +130,7 @@ nav{
 .container{
     background: linear-gradient(135deg,rgba(235, 233, 247, 0.8),#f4f7ff);
     width:100%;
-    min-height:100vh;
+    min-height:90vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -183,6 +186,22 @@ nav{
     padding:10px 60px;
     background: linear-gradient(to right, #ab1dcf,#f80759);
     box-shadow: rgba(0,0,0,0.3) 0px 19px 38px, rgbs(0,0,0,0.22) 0px 19px 38px;
+    margin:auto;
+    outline:none;
+    border:none;
+    cursor:pointer;
+    transition: all 0.1s;
+    margin:25px;
+}
+.btn btn-primary m-2{
+    display: flex;
+    text-transform: uppercase;
+    font-size:20px;
+    border-radius:25px;
+    color:white;
+    padding:10px 60px;
+    background: linear-gradient(to right, #ab1dcf,#f80759);
+    box-shadow: rgba(175, 157, 157, 0.3) 0px 19px 38px, rgb(0,0,0,0.22) 0px 19px 38px;
     margin:auto;
     outline:none;
     border:none;

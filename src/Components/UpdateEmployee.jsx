@@ -1,7 +1,6 @@
 import React,{Component} from "react";
-import  EmployeeService  from "./Service/EmployeeService";
-// import validation from './validation';
-export default class Employee extends Component
+import  EmployeeService11  from "./Service/EmployeeService11";
+export default class UpdateEmployee extends Component
 {
     constructor(props){
         super(props)
@@ -14,7 +13,6 @@ export default class Employee extends Component
             email:''
         }
     }
-
     handleuserId=(event)=>
     {
         this.setState(
@@ -23,7 +21,6 @@ export default class Employee extends Component
             }
         )
     }
-
     handlefirstName=(event)=>
     {
         this.setState(
@@ -32,7 +29,6 @@ export default class Employee extends Component
             }
         )
     }
-
     handlelastName=(event)=>
     {
         this.setState(
@@ -41,7 +37,6 @@ export default class Employee extends Component
             }
         )
     }
-
     handledob=(event)=>
     {
         this.setState(
@@ -50,7 +45,6 @@ export default class Employee extends Component
             }
         )
     }
-
     handleemail=(event)=>
     {
         this.setState(
@@ -59,58 +53,52 @@ export default class Employee extends Component
             }
         )
     }
-
     handleForSubmission=(event)=>
     {
         event.preventDefault()
-        this.saveEmployee(this.state)
+        this.updateEmployee(this.state)
     }
-
-    saveEmployee(employee)
+    updateEmployee(employee)
     {
-        EmployeeService.saveEmployee(employee).then(response=>
+        EmployeeService11.updateEmployee(employee).then(response=>
             {
                 console.log(response)
             }).catch(error=>console.log(error))
     }
-
     render()
     {
         return (
-            <div>
-            <h2 className="text-info">Employee</h2>
+            <div className="container">
+            <div className="name">
+                <center>
+            <h2 className="text-info">Update Employee</h2>
+            </center>
             <hr/>
-            <form className="form-wrapper" onSubmit={this.handleForSubmission}>
-                <div className="name">
+            <form onSubmit={this.handleForSubmission}>
+                <div className="form-group">
                     <label>User Id</label>
                     <input onChange={this.handleuserId} value={this.state.userId} className="form-control"/>
-                    {/* {errors.userId && <p className="error">{errors.userId}</p>} */}
                 </div>
-
-                <div className="name">
-                    <label type="required">First Name</label>
+                <div className="form-group">
+                    <label>First Name</label>
                     <input onChange={this.handlefirstName} value={this.state.firstName} className="form-control"/>
-                    {/* {errors.firstname && <p className="error">{errors.firstname}</p>} */}
                 </div>
-
-                <div className="">
+                <div className="form-group">
                     <label>Last Name</label>
                     <input onChange={this.handlelastName} value={this.state.lastName} className="form-control"/>
-                    {/* {errors.lastname && <p className="error">{errors.lastname}</p>} */}
                 </div>
-
                 <div className="form-group">
                     <label>DOB</label>
                     <input onChange={this.handledob} value={this.state.dob} className="form-control"/>
                 </div>
-
                 <div className="form-group">
                     <label>Email ID</label>
                     <input onChange={this.handleemail} value={this.state.email} className="form-control"/>
-                    {/* {errors.email && <p className="error">{errors.email}</p>} */}
                 </div>
-                <button className="btn btn-primary mt-2">Save</button>
+                <button className="btn btn-primary mt-2 ">Update</button>
+                {/* <button onClick={() => alert.show('Update Successfully')}></button> */}
             </form>
+            </div>
             </div>
         )
     }
